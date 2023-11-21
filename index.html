@@ -12,7 +12,7 @@
       background-color: #ffd3e8; /* Pastel pink background color */
     }
 
-    h1 {
+    h1, h2 {
       text-align: center;
       font-family: 'Pacifico', cursive; /* Changed to Pacifico cursive font */
       color: transparent;
@@ -42,7 +42,7 @@
       width: 100%;
       height: 100%;
       z-index: -1; /* Placed hearts in the background */
-      animation: floatUp 20s linear infinite; /* Slowed down the animation */
+      animation: floatUp 60s linear infinite; /* Slowed down the animation by 3x */
     }
 
     .heart {
@@ -51,7 +51,7 @@
       background: url('IMG_0881.png') no-repeat center/cover; /* Replace with your image URL */
       position: absolute;
       opacity: 0; /* Initial opacity set to 0 */
-      animation: twinkle 3s infinite, floatHeart 20s linear infinite; /* Slowed down the animation */
+      animation: twinkle 3s infinite, floatHeart 60s linear infinite; /* Slowed down the animation by 3x */
     }
 
     @keyframes twinkle {
@@ -102,7 +102,7 @@
       heart.className = 'heart';
       heart.style.left = `${Math.random() * 100}vw`;
       heart.style.top = `${Math.random() * 100}vh`;
-      heart.style.animationDuration = `${Math.random() * 4 + 2}s`;
+      heart.style.animationDuration = `${Math.random() * 12 + 6}s`; /* Slowed down the animation by 3x */
       heartContainer.appendChild(heart);
     }
   </script>
