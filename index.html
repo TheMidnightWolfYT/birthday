@@ -52,7 +52,7 @@
       background: url('IMG_0881.png') no-repeat center/cover; /* Replace with your image URL */
       position: absolute;
       opacity: 0; /* Initial opacity set to 0 */
-      animation: twinkle 5s infinite, moveStars 25s linear infinite;
+      animation: twinkle 2s infinite, floatHeart 10s linear infinite;
     }
 
     @keyframes twinkle {
@@ -64,21 +64,12 @@
       }
     }
 
-    @keyframes floatUp {
+    @keyframes floatHeart {
       0% {
         transform: translateY(100vh);
       }
       100% {
         transform: translateY(-100vh);
-      }
-    }
-
-    @keyframes moveStars {
-      from {
-        transform: translateY(100%);
-      }
-      to {
-        transform: translateY(-100%);
       }
     }
 
