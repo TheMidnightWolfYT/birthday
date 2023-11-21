@@ -38,12 +38,13 @@
     }
 
     .heart-container {
-      position: absolute;
-      bottom: 0;
+      position: fixed;
+      top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      animation: floatUp 10s linear infinite;
+      z-index: -1; /* Placed hearts in the background */
+      animation: floatUp 20s linear infinite; /* Slowed down the animation */
     }
 
     .heart {
@@ -52,7 +53,7 @@
       background: url('IMG_0881.png') no-repeat center/cover; /* Replace with your image URL */
       position: absolute;
       opacity: 0; /* Initial opacity set to 0 */
-      animation: twinkle 2s infinite, floatHeart 10s linear infinite;
+      animation: twinkle 3s infinite, floatHeart 20s linear infinite; /* Slowed down the animation */
     }
 
     @keyframes twinkle {
