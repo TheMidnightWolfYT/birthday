@@ -26,6 +26,15 @@
       margin-top: 10px; /* Adjusted margin */
     }
 
+    img {
+      display: block;
+      margin: auto;
+      width: 100px; /* Adjusted size for the image */
+      height: 100px; /* Adjusted size for the image */
+      margin-top: 20px; /* Adjusted margin */
+      animation: pulse 2s infinite alternate; /* Pulsing animation */
+    }
+
     @keyframes pulse {
       0%, 100% {
         transform: scale(1);
@@ -48,10 +57,19 @@
     .heart {
       width: 20px; /* Adjusted size for hearts */
       height: 20px; /* Adjusted size for hearts */
-      background: url('IMG_0881.png') no-repeat center/cover; /* Replace with your image URL */
+      background: url('IMG_0881.png') no-repeat center/cover; /* Replace with your heart image URL */
       position: absolute;
       opacity: 0; /* Initial opacity set to 0 */
       animation: twinkle 3s infinite, floatHeart 60s linear infinite; /* Slowed down the animation by 3x */
+    }
+
+    .alternate-image {
+      width: 100px; /* Adjusted size for the alternate image */
+      height: 100px; /* Adjusted size for the alternate image */
+      background: url('IMG_0883.png') no-repeat center/cover; /* Replace with your alternate image URL */
+      position: absolute;
+      opacity: 0; /* Initial opacity set to 0 */
+      animation: pulse 2s infinite alternate; /* Pulsing animation for alternate image */
     }
 
     @keyframes twinkle {
@@ -78,6 +96,11 @@
         width: 10px; /* Adjusted size for mobile */
         height: 10px; /* Adjusted size for mobile */
       }
+
+      .alternate-image {
+        width: 50px; /* Adjusted size for mobile */
+        height: 50px; /* Adjusted size for mobile */
+      }
     }
   </style>
   <title>Floating Hearts</title>
@@ -99,7 +122,7 @@
 
     function createHeart() {
       const heart = document.createElement('div');
-      heart.className = 'heart';
+      heart.className = Math.random() < 0.5 ? 'heart' : 'alternate-image'; /* 50% chance for each class */
       heart.style.left = `${Math.random() * 100}vw`;
       heart.style.top = `${Math.random() * 100}vh`;
       heart.style.animationDuration = `${Math.random() * 12 + 6}s`; /* Slowed down the animation by 3x */
