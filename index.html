@@ -51,8 +51,17 @@
       height: 20px; /* Adjusted size for hearts */
       background: url('IMG_0881.png') no-repeat center/cover; /* Replace with your image URL */
       position: absolute;
-      animation: pulse 2s infinite alternate, rotateStart 2s ease-in-out, despawn 2s forwards, respawn 0.1s forwards;
       opacity: 0; /* Initial opacity set to 0 */
+      animation: twinkle 5s infinite, moveStars 25s linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.8;
+      }
+      50% {
+        opacity: 1;
+      }
     }
 
     @keyframes floatUp {
@@ -64,32 +73,12 @@
       }
     }
 
-    @keyframes rotateStart {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes despawn {
-      0% {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-        transform: translateY(-150vh); /* Adjusted to move hearts further up */
-      }
-    }
-
-    @keyframes respawn {
+    @keyframes moveStars {
       from {
-        opacity: 0;
+        transform: translateY(100%);
       }
       to {
-        opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-100%);
       }
     }
 
@@ -114,6 +103,10 @@
     const heartContainer = document.querySelector('.heart-container');
 
     for (let i = 0; i < 100; i++) {
+      createHeart();
+    }
+
+    function createHeart() {
       const heart = document.createElement('div');
       heart.className = 'heart';
       heart.style.left = `${Math.random() * 100}vw`;
