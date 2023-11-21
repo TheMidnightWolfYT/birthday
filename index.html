@@ -57,19 +57,33 @@
     .heart {
       width: 20px; /* Adjusted size for hearts */
       height: 20px; /* Adjusted size for hearts */
-      background: url('IMG_0881.png') no-repeat center/cover; /* Replace with your heart image URL */
       position: absolute;
       opacity: 0; /* Initial opacity set to 0 */
       animation: twinkle 3s infinite, floatHeart 60s linear infinite; /* Slowed down the animation by 3x */
     }
 
+    .heart::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url('IMG_0881.png') no-repeat center/cover; /* Replace with your heart image URL */
+    }
+
     .alternate-image {
       width: 100px; /* Adjusted size for the alternate image */
       height: 100px; /* Adjusted size for the alternate image */
-      background: url('IMG_0883.png') no-repeat center/cover; /* Replace with your alternate image URL */
       position: absolute;
       opacity: 0; /* Initial opacity set to 0 */
       animation: pulse 2s infinite alternate; /* Pulsing animation for alternate image */
+    }
+
+    .alternate-image::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url('IMG_0883.png') no-repeat center/cover; /* Replace with your alternate image URL */
     }
 
     @keyframes twinkle {
