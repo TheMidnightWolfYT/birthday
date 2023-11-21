@@ -12,7 +12,7 @@
       background-color: #ffd3e8; /* Pastel pink background color */
     }
 
-    h1, h2 {
+    h1 {
       text-align: center;
       font-family: 'Pacifico', cursive; /* Changed to Pacifico cursive font */
       color: transparent;
@@ -21,7 +21,8 @@
       animation: pulse 2s infinite alternate, rainbow 5s linear infinite;
     }
 
-    h2 {
+    h1#livi {
+      color: black; /* Black color for Livi text */
       margin-top: 10px; /* Adjusted margin */
     }
 
@@ -31,12 +32,6 @@
       }
       50% {
         transform: scale(1.1);
-      }
-    }
-
-    @keyframes rainbow {
-      to {
-        background-position: 200% 50%;
       }
     }
 
@@ -89,7 +84,7 @@
 </head>
 <body>
   <h1>Happy Birthday</h1>
-  <h2>Livi</h2>
+  <h1 id="livi">Livi</h1>
   <div class="heart-container">
     <!-- Add 100 hearts dynamically with JavaScript -->
   </div>
