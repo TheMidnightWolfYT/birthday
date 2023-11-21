@@ -42,25 +42,27 @@
       width: 100%;
       height: 100%;
       z-index: -1; /* Placed hearts in the background */
-      animation: floatUp 60s linear infinite; /* Slowed down the animation by 3x */
+      animation: floatUp 20s linear infinite; /* Adjusted animation duration */
     }
 
-    .heart {
+    .heart,
+    .alternate-image {
       width: 20px; /* Adjusted size for hearts */
       height: 20px; /* Adjusted size for hearts */
       position: absolute;
       opacity: 0; /* Initial opacity set to 0 */
+      animation: pulse 2s infinite alternate; /* Pulsing animation for both hearts and alternate image */
+    }
+
+    .heart {
       background: url('IMG_0881.png') no-repeat center/cover; /* Replace with your heart image URL */
-      animation: twinkle 3s infinite, floatHeart 60s linear infinite; /* Slowed down the animation by 3x */
+      animation: twinkle 3s infinite, floatHeart 20s linear infinite; /* Adjusted animation duration */
     }
 
     .alternate-image {
-      width: 100px; /* Adjusted size for the alternate image */
-      height: 100px; /* Adjusted size for the alternate image */
-      position: absolute;
-      opacity: 1; /* Set opacity to 1 */
+      width: 153.6px; /* Adjusted width for the alternate image */
+      height: 400px; /* Adjusted height for the alternate image */
       background: url('IMG_0883.png') no-repeat center/cover; /* Replace with your alternate image URL */
-      animation: pulse 2s infinite alternate; /* Pulsing animation for alternate image */
     }
 
     @keyframes pulse {
@@ -92,14 +94,10 @@
 
     @media only screen and (max-width: 600px) {
       /* Adjust styles for screens with a maximum width of 600px (typically mobile devices) */
-      .heart {
-        width: 10px; /* Adjusted size for mobile */
-        height: 10px; /* Adjusted size for mobile */
-      }
-
+      .heart,
       .alternate-image {
-        width: 50px; /* Adjusted size for mobile */
-        height: 50px; /* Adjusted size for mobile */
+        width: 10px; /* Adjusted size for both on mobile */
+        height: 10px; /* Adjusted size for both on mobile */
       }
     }
   </style>
@@ -127,12 +125,11 @@
       heart.className = 'heart';
       heart.style.left = `${Math.random() * 100}vw`;
       heart.style.top = `${Math.random() * 100}vh`;
-      heart.style.animationDuration = `${Math.random() * 12 + 6}s`; /* Slowed down the animation by 3x */
       heartContainer.appendChild(heart);
     }
 
     // Set background image for the alternate image
-    alternateImage.style.background = 'url("IMG_0883.png") no-repeat center/cover';
+    alternateImage.style.animationDuration = `${Math.random() * 12 + 6}s`; /* Slowed down the animation by 3x */
   </script>
 </body>
-</html>
+</html
