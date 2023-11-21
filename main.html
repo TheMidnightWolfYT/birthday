@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+  <style>
+    body {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      background-color: #ffd3e8; /* Pastel pink background color */
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30vh; /* Adjusted margin for vertical centering */
+      font-family: 'Pacifico', cursive; /* Changed to Pacifico cursive font */
+      color: transparent;
+      background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red, violet);
+      -webkit-background-clip: text;
+      animation: pulse 2s infinite alternate, rainbow 5s linear infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes rainbow {
+      to {
+        background-position: 200% 50%;
+      }
+    }
+
+    .heart-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      animation: floatUp 10s linear infinite;
+    }
+
+    .heart {
+      width: 20px; /* Adjusted size for hearts */
+      height: 20px; /* Adjusted size for hearts */
+      background: url('your-heart-image-url.jpg') no-repeat center/cover; /* Replace with your image URL */
+      position: absolute;
+      animation: pulse 2s infinite alternate, rotateStart 2s ease-in-out, despawn 2s forwards, respawn 0.1s forwards;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh);
+      }
+      100% {
+        transform: translateY(-100vh);
+      }
+    }
+
+    @keyframes rotateStart {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes despawn {
+      to {
+        opacity: 0;
+        transform: translateY(-150vh); /* Adjusted to move hearts further up */
+      }
+    }
+
+    @keyframes respawn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      /* Adjust styles for screens with a maximum width of 600px (typically mobile devices) */
+      .heart {
+        width: 10px; /* Adjusted size for mobile */
+        height: 10px; /* Adjusted size for mobile */
+      }
+    }
+  </style>
+  <title>Floating Hearts</title>
+</head>
+<body>
+  <h1>Happy Birthday</h1>
+  <div class="heart-container">
+    <!-- Add 100 hearts dynamically with JavaScript -->
+  </div>
+
+  <script>
+    // Add 100 hearts dynamically
+    const heartContainer = document.querySelector('.heart-container');
+
+    for (let i = 0; i < 100; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.top = `${Math.random() * 100}vh`;
+      heart.style.animationDuration = `${Math.random() * 4 + 2}s`;
+      heartContainer.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
