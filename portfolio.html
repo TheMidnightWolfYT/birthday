@@ -6,79 +6,82 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #ffd3e8; /* Light pink background color */
-      color: #333; /* Default text color */
+      margin: 0;
+      padding: 0;
     }
 
     header {
-      background-color: #ff91ab; /* Slightly darker pink for the header */
+      background-color: #333;
+      color: #fff;
       padding: 10px;
       text-align: center;
-      color: white; /* Text color for the header */
     }
 
-    nav {
-      margin-bottom: 10px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    li {
-      margin: 0 15px;
-    }
-
-    a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 3em; /* Increased font size by 3x */
-    }
-
-    .content {
+    #portfolio-posts {
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
-      background-color: #fff; /* White content background color */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for content */
     }
 
-    p {
-      font-size: 2em; /* Increased font size by 2x */
+    .portfolio-post {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
     }
 
-    h1 {
-      color: #ff91ab; /* Header text color */
-      font-size: 3em; /* Increased font size by 3x */
+    .portfolio-post h2 {
+      color: #333;
+    }
+
+    .portfolio-post p {
+      color: #555;
+    }
+
+    .portfolio-post img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
     }
   </style>
   <title>Portfolio Page</title>
 </head>
 <body>
+
   <header>
-    <nav>
-      <ul>
-        <li><a href="main.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-      </ul>
-    </nav>
     <h1>Portfolio Page</h1>
   </header>
-  
-  <div class="content">
-    <p>
-      Welcome to the portfolio page! Showcase your work and projects here.
-    </p>
 
-    <!-- Add more information about the portfolio page as needed -->
-  </div>
+  <main id="portfolio-posts">
+    <!-- Portfolio posts will be dynamically added here using JavaScript -->
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Dummy data for portfolio posts (replace this with your actual data)
+      const portfolioPosts = [
+        { title: 'Project 1', description: 'Description of Project 1.', image: 'path/to/image1.jpg' },
+        { title: 'Project 2', description: 'Description of Project 2.', image: 'path/to/image2.jpg' },
+        // Add more portfolio posts as needed
+      ];
+
+      const portfolioPostsContainer = document.getElementById('portfolio-posts');
+
+      // Loop through the portfolio posts and create HTML elements
+      portfolioPosts.forEach(post => {
+        const postElement = document.createElement('div');
+        postElement.classList.add('portfolio-post');
+
+        postElement.innerHTML = `
+          <img src="${post.image}" alt="${post.title} Image">
+          <h2>${post.title}</h2>
+          <p>${post.description}</p>
+        `;
+
+        portfolioPostsContainer.appendChild(postElement);
+      });
+    });
+  </script>
+
 </body>
 </html>
