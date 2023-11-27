@@ -12,10 +12,33 @@
     }
 
     header {
-      background-color: #333;
-      color: #fff;
+      background-color: #ff91ab; /* Light pink background color for the header */
+      color: white;
       padding: 10px;
       text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2em; /* Font size adjusted for the navigation links */
     }
 
     #portfolio-posts {
@@ -51,6 +74,14 @@
   <header>
     <h1>Portfolio Page</h1>
   </header>
+
+  <nav>
+    <ul>
+      <li><a href="main.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+    </ul>
+  </nav>
 
   <main id="portfolio-posts">
     <!-- Portfolio posts will be dynamically added here using JavaScript -->
