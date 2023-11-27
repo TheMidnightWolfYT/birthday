@@ -42,7 +42,7 @@
       font-size: 1.5em; /* Font size adjusted for the navigation links */
     }
 
-    #portfolio-posts {
+    .portfolio-post {
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
@@ -85,9 +85,7 @@
     </nav>
   </header>
 
-  <main id="portfolio-posts">
-    <!-- Portfolio posts will be dynamically added here using JavaScript -->
-  </main>
+  <!-- Portfolio posts will be dynamically added here using JavaScript -->
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -98,7 +96,7 @@
         // Add more portfolio posts as needed
       ];
 
-      const portfolioPostsContainer = document.getElementById('portfolio-posts');
+      const portfolioPostsContainer = document.body;
 
       // Loop through the portfolio posts and create HTML elements
       portfolioPosts.forEach(post => {
