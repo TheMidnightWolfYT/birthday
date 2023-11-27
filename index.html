@@ -45,24 +45,13 @@
       animation: floatUp 20s linear infinite; /* Adjusted animation duration */
     }
 
-    .heart,
-    .alternate-image {
+    .heart {
       width: 20px; /* Adjusted size for hearts */
       height: 20px; /* Adjusted size for hearts */
       position: absolute;
       opacity: 0; /* Initial opacity set to 0 */
-      animation: pulse 2s infinite alternate; /* Pulsing animation for both hearts and alternate image */
-    }
-
-    .heart {
       background: url('IMG_0881.png') no-repeat center/cover; /* Replace with your heart image URL */
       animation: twinkle 3s infinite, floatHeart 20s linear infinite; /* Adjusted animation duration */
-    }
-
-    .alternate-image {
-      width: 153.6px; /* Adjusted width for the alternate image */
-      height: 400px; /* Adjusted height for the alternate image */
-      background: url('IMG_0883.png') no-repeat center/cover; /* Replace with your alternate image URL */
     }
 
     @keyframes pulse {
@@ -94,27 +83,27 @@
 
     @media only screen and (max-width: 600px) {
       /* Adjust styles for screens with a maximum width of 600px (typically mobile devices) */
-      .heart,
-      .alternate-image {
-        width: 10px; /* Adjusted size for both on mobile */
-        height: 10px; /* Adjusted size for both on mobile */
+      .heart {
+        width: 10px; /* Adjusted size for mobile */
+        height: 10px; /* Adjusted size for mobile */
       }
     }
   </style>
   <title>Floating Hearts</title>
 </head>
 <body>
-  <h1>Happy Birthday</h1>
-  <h1 id="livi">Livi</h1>
+  <a href="main.html">
+    <h1>Happy Birthday</h1>
+    <h1 id="livi">Livi</h1>
+    <img src="your-image-url.jpg" alt="Image Description">
+  </a>
   <div class="heart-container">
     <!-- Add 100 hearts dynamically with JavaScript -->
   </div>
-  <div class="alternate-image"></div>
 
   <script>
     // Add 100 hearts dynamically
     const heartContainer = document.querySelector('.heart-container');
-    const alternateImage = document.querySelector('.alternate-image');
 
     for (let i = 0; i < 100; i++) {
       createHeart();
@@ -127,9 +116,6 @@
       heart.style.top = `${Math.random() * 100}vh`;
       heartContainer.appendChild(heart);
     }
-
-    // Set background image for the alternate image
-    alternateImage.style.animationDuration = `${Math.random() * 12 + 6}s`; /* Slowed down the animation by 3x */
   </script>
 </body>
-</html
+</html>
