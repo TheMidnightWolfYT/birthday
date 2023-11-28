@@ -1,98 +1,28 @@
+<!-- portfolio.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Portfolio</title>
-  <style>
-    body {
-      background-color: #fff7f9; /* Light pink background */
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      background-color: #ff91ab; /* Light pink header */
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #ff91ab; /* Matching pink for navigation bar */
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    nav li {
-      margin: 0 15px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 1.5em; /* Font size adjusted to match main and about pages */
-    }
-
-    section {
-      padding: 2rem;
-    }
-
-    .portfolio-post {
-      margin-bottom: 2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header>
-    <nav>
-      <ul>
-        <li><a href="main.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-      </ul>
-    </nav>
-    <h1>Your Name's Portfolio</h1>
+    <h1>Your Portfolio</h1>
   </header>
 
   <section id="portfolio">
-    <!-- Portfolio posts will be dynamically added here using JavaScript -->
+    <!-- Add your portfolio items here -->
+    <div class="portfolio-item">
+      <img src="path/to/your/image1.jpg" alt="Description 1">
+    </div>
+    <div class="portfolio-item">
+      <img src="path/to/your/image2.jpg" alt="Description 2">
+    </div>
+    <!-- Add more portfolio items as needed -->
   </section>
-
-  <script>
-    // Sample data for portfolio posts
-    const portfolioData = [
-      { title: 'Project 1', description: 'Description for Project 1' },
-      { title: 'Project 2', description: 'Description for Project 2' },
-      // Add more portfolio items as needed
-    ];
-
-    // Function to add portfolio posts to the page
-    function addPortfolioPosts() {
-      const portfolioSection = document.getElementById('portfolio');
-
-      portfolioData.forEach(item => {
-        const postElement = document.createElement('div');
-        postElement.classList.add('portfolio-post');
-        postElement.innerHTML = `
-          <h2>${item.title}</h2>
-          <p>${item.description}</p>
-        `;
-        portfolioSection.appendChild(postElement);
-      });
-    }
-
-    // Call the function to add portfolio posts
-    addPortfolioPosts();
-  </script>
 
 </body>
 </html>
