@@ -1,12 +1,10 @@
 /* styles.css */
 body {
-  background-color: lightpink;
-  margin: 0;
   font-family: Arial, sans-serif;
+  margin: 0;
 }
 
-header,
-nav {
+header, nav {
   background-color: #ff66b2; /* Darker pink */
   color: white;
   padding: 1rem;
