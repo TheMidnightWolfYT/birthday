@@ -6,16 +6,39 @@
   <title>Your Portfolio</title>
   <style>
     body {
-      background-color: lightpink;
+      background-color: #fff7f9; /* Light pink background */
       margin: 0;
       font-family: Arial, sans-serif;
     }
 
     header {
-      background-color: #ff66b2; /* Darker pink */
+      background-color: #ff91ab; /* Light pink header */
       color: white;
       padding: 1rem;
       text-align: center;
+    }
+
+    nav {
+      background-color: #ff91ab; /* Matching pink for navigation bar */
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5em;
     }
 
     section {
@@ -30,6 +53,13 @@
 <body>
 
   <header>
+    <nav>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+    </nav>
     <h1>Your Name's Portfolio</h1>
   </header>
 
