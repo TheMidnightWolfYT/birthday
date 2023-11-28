@@ -3,115 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+  <title>Your Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      background-color: lightpink;
       margin: 0;
-      padding: 0;
-      background-color: #fff7f9; /* Light pink background color */
+      font-family: Arial, sans-serif;
     }
 
     header {
-      background-color: #ff91ab; /* Light pink background color for the header */
+      background-color: #ff66b2; /* Darker pink */
       color: white;
-      padding: 10px;
+      padding: 1rem;
       text-align: center;
     }
 
-    nav {
-      background-color: #ff91ab; /* Matching pink background for the navigation bar */
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    nav li {
-      margin: 0 15px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 1.5em; /* Font size adjusted for the navigation links */
+    section {
+      padding: 2rem;
     }
 
     .portfolio-post {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff7f9; /* Light pink background color for the content area */
-    }
-
-    .portfolio-post {
-      margin-bottom: 30px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 20px;
-    }
-
-    .portfolio-post h2 {
-      color: #333;
-      font-size: 1.5em; /* Font size adjusted for portfolio post titles */
-    }
-
-    .portfolio-post p {
-      color: #555;
-      font-size: 1em; /* Font size adjusted for portfolio post descriptions */
-    }
-
-    .portfolio-post img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 15px;
+      margin-bottom: 2rem;
     }
   </style>
-  <title>Portfolio Page</title>
 </head>
 <body>
 
   <header>
-    <nav>
-      <ul>
-        <li><a href="main.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-      </ul>
-    </nav>
+    <h1>Your Name's Portfolio</h1>
   </header>
 
-  <!-- Portfolio posts will be dynamically added here using JavaScript -->
+  <section id="portfolio">
+    <!-- Portfolio posts will be dynamically added here using JavaScript -->
+  </section>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Dummy data for portfolio posts (replace this with your actual data)
-      const portfolioPosts = [
-        { title: 'Project 1', description: 'Description of Project 1.', image: 'path/to/image1.jpg' },
-        { title: 'Project 2', description: 'Description of Project 2.', image: 'path/to/image2.jpg' },
-        // Add more portfolio posts as needed
-      ];
+    // Sample data for portfolio posts
+    const portfolioData = [
+      { title: 'Project 1', description: 'Description for Project 1' },
+      { title: 'Project 2', description: 'Description for Project 2' },
+      // Add more portfolio items as needed
+    ];
 
-      const portfolioPostsContainer = document.body;
+    // Function to add portfolio posts to the page
+    function addPortfolioPosts() {
+      const portfolioSection = document.getElementById('portfolio');
 
-      // Loop through the portfolio posts and create HTML elements
-      portfolioPosts.forEach(post => {
+      portfolioData.forEach(item => {
         const postElement = document.createElement('div');
         postElement.classList.add('portfolio-post');
-
         postElement.innerHTML = `
-          <img src="${post.image}" alt="${post.title} Image">
-          <h2>${post.title}</h2>
-          <p>${post.description}</p>
+          <h2>${item.title}</h2>
+          <p>${item.description}</p>
         `;
-
-        portfolioPostsContainer.appendChild(postElement);
+        portfolioSection.appendChild(postElement);
       });
-    });
+    }
+
+    // Call the function to add portfolio posts
+    addPortfolioPosts();
   </script>
 
 </body>
