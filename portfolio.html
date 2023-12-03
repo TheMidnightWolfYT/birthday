@@ -8,11 +8,11 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: url('IMG_2697.png') no-repeat center/cover;
+      background-color: #ff99cc; /* Slightly darker pink */
     }
 
     header, nav {
-      background-color: rgba(255, 51, 153, 0.8); /* Lighter pink with transparency */
+      background-color: #ff3399; /* Lighter pink */
       color: white;
       padding: 1rem;
       text-align: center;
@@ -64,9 +64,34 @@
     <a href="portfolio.html">Portfolio</a>
   </nav>
 
-  <section class="content">
-    <!-- Your portfolio content goes here -->
+  <section class="content" id="portfolio-section">
+    <!-- Portfolio items will be dynamically added here using JavaScript -->
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Dummy data for portfolio items (replace this with your actual data)
+      const portfolioData = [
+        { title: 'Project 1', description: 'Description for Project 1', image: 'image1.jpg' },
+        { title: 'Project 2', description: 'Description for Project 2', image: 'image2.jpg' },
+        // Add more portfolio items as needed
+      ];
+
+      const portfolioSection = document.getElementById('portfolio-section');
+
+      // Loop through the portfolio items and create HTML elements
+      portfolioData.forEach(item => {
+        const portfolioItem = document.createElement('div');
+        portfolioItem.classList.add('portfolio-item');
+        portfolioItem.innerHTML = `
+          <h2>${item.title}</h2>
+          <img src="${item.image}" alt="${item.title}">
+          <p>${item.description}</p>
+        `;
+        portfolioSection.appendChild(portfolioItem);
+      });
+    });
+  </script>
 
 </body>
 </html>
